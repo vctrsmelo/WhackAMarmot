@@ -63,7 +63,6 @@ public class GameManager: NSObject {
             setup(for: plane, with: SCNScene(named: "art.scnassets/scenarioHard.scn")!)
             break
         }
-
     }
     
     private func setup(for planeAnchor: ARPlaneAnchor, with scene: SCNScene) {

@@ -37,9 +37,9 @@ public class StartView: UIView {
         
         self.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.9450980392, blue: 0.9294117647, alpha: 1)
         
-        setupLogoImageView()
         setupStartButton()
         setupMarmotsImages()
+        setupLogoImageView()
     }
     
     private func setupLogoImageView() {
@@ -55,6 +55,7 @@ public class StartView: UIView {
         logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         logoImageView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.8).isActive = true
         logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        logoImageView.bottomAnchor.constraint(lessThanOrEqualTo: startButton.topAnchor, constant: -30).isActive = true
     }
     
     private func setupStartButton() {
@@ -68,11 +69,11 @@ public class StartView: UIView {
         
         startButton.imageView!.contentMode = .scaleAspectFit
         
-        startButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100).isActive = true
+        startButton.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -50).isActive = true
         startButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        startButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         startButton.heightAnchor.constraint(equalToConstant: 90).isActive = true
         startButton.widthAnchor.constraint(equalToConstant: 252).isActive = true
-        
         startButton.addTarget(self, action: #selector(self.startButtonTouched), for: .touchUpInside)
     }
     

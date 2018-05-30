@@ -225,7 +225,7 @@ public class ViewController: UIViewController {
         
         timerProgressView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         timerProgressView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        timerProgressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        timerProgressView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height*0.05).isActive = true
         timerProgressView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
         
     }
@@ -236,7 +236,7 @@ public class ViewController: UIViewController {
         
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        pointsLabel.topAnchor.constraint(equalTo: timerProgressView.bottomAnchor, constant: 10).isActive = true
+        pointsLabel.topAnchor.constraint(equalTo: timerProgressView.bottomAnchor, constant: view.frame.height*0.005).isActive = true
         pointsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         pointsLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         pointsLabel.heightAnchor.constraint(equalToConstant: 150).isActive = true

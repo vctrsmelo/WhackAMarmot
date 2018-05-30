@@ -89,7 +89,7 @@ public class EndView: UIView {
         congratulationsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         congratulationsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        congratulationsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        congratulationsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         congratulationsLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         
         
@@ -142,7 +142,7 @@ public class EndView: UIView {
         bestScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         
         bestScoreLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        bestScoreLabel.topAnchor.constraint(equalTo: self.congratulationsLabel.bottomAnchor, constant: 15).isActive = true
+        bestScoreLabel.topAnchor.constraint(equalTo: self.congratulationsLabel.bottomAnchor, constant: self.frame.height*0.05).isActive = true
         bestScoreLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
     }
     
@@ -165,7 +165,7 @@ public class EndView: UIView {
         yourScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         
         yourScoreLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        yourScoreLabel.topAnchor.constraint(equalTo: self.bestScoreLabel.bottomAnchor, constant: 15).isActive = true
+        yourScoreLabel.topAnchor.constraint(equalTo: self.bestScoreLabel.bottomAnchor, constant: self.frame.height*0.05).isActive = true
         
         yourScoreLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
     }
@@ -178,10 +178,11 @@ public class EndView: UIView {
         
         marmotFaceImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        marmotFaceImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        marmotFaceImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        marmotFaceImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 10).isActive = true
-        marmotFaceImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -75).isActive = true
+        marmotFaceImageView.widthAnchor.constraint(equalToConstant: 70*0.7).isActive = true
+        marmotFaceImageView.heightAnchor.constraint(equalToConstant: 120*0.7).isActive = true
+//        marmotFaceImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: self.frame.height*0.2).isActive = true
+        marmotFaceImageView.topAnchor.constraint(equalTo: yourScoreLabel.bottomAnchor, constant: 2).isActive = true
+        marmotFaceImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -70).isActive = true
     }
     
     private func setupPointsLabel() {
@@ -200,7 +201,7 @@ public class EndView: UIView {
         
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        pointsLabel.centerYAnchor.constraint(equalTo: marmotFaceImageView.centerYAnchor, constant: 10).isActive = true
+        pointsLabel.centerYAnchor.constraint(equalTo: marmotFaceImageView.centerYAnchor, constant: self.frame.height*0.035).isActive = true
         pointsLabel.leftAnchor.constraint(equalTo: marmotFaceImageView.rightAnchor, constant: 10).isActive = true
         pointsLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
@@ -215,10 +216,10 @@ public class EndView: UIView {
         playAgainButton.setImage(UIImage(named: "playAgainButtonPressed"), for: .highlighted)
         playAgainButton.imageView!.contentMode = .scaleAspectFit
         
-        playAgainButton.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        playAgainButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         playAgainButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        playAgainButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40).isActive = true
-        
+        playAgainButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
+        playAgainButton.topAnchor.constraint(greaterThanOrEqualTo: marmotFaceImageView.bottomAnchor, constant: 5).isActive = true
         playAgainButton.addTarget(self, action: #selector(self.playAgainButtonTouched), for: .touchUpInside)
     }
     
